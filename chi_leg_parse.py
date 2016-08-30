@@ -72,12 +72,13 @@ def findEventDetailLink(event_html):
     clean_link = ROOT+dirty_link
     return clean_link
 
-def findEventDepartmentMembers(obj):
-    web_page = urllib.urlopen(obj.detail_link)
-    contents = web_page.read()
-    web_page.close()
+#Start of functionality to create objects for politicians
 
-    return contents
+# def findEventDepartmentMembers(obj):
+#     web_page = urllib.urlopen(obj.detail_link)
+#     contents = web_page.read()
+#     web_page.close()
+#     return contents
 
 
 
@@ -89,7 +90,6 @@ def createEvents():
         event = Event(name=findEventName(event_html), date=findEventDate(event_html), time=findEventTime(event_html), location=findEventLocation(event_html), detail_link=findEventDetailLink(event_html), department_members="a")
         print
         print event
-        print findEventDepartmentMembers(event)
         event_objs.append(event)
 
 
