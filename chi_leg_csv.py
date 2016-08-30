@@ -7,10 +7,9 @@ class Event(object):
         self.date = date
         self.time = time
         self.location = location
-        self.detail_link = True
 
     def __str__(self):
-        return  "Event Name: "+self.name+"\nDate: "+self.date+"\nTime: "+self.time+"\nLocation: "+self.location+"\nLink to Details: "
+        return  "Event Name: "+self.name+"\nDate: "+self.date+"\nTime: "+self.time+"\nLocation: "+self.location
 
 def createEvents():
 	event_objs = []
