@@ -1,5 +1,4 @@
-import re
-import random
+import random, string
 
 #1
 
@@ -52,15 +51,17 @@ def longest_substring(string):
 
 	for length in substrings:
 		if length > longest_substring:
-			longest_substring == length
+			longest_substring = length
 
 	return longest_substring
 
-print longest_substring("bbbbb")
+print longest_substring("bbbbbaabcdhbcdkcbkjs")
 
 SUITS = ['Hearts', 'Spades', 'Clubs', 'Diamonds']
 VALUES = ["Ace",1,2,3,4,5,6,7,8,9,10,"Jack","Queen","King"]
 # a card consists of a string suite and a string value
+
+
 class Card(object):
 
 	def __init__(self, value, suit):
