@@ -2,6 +2,22 @@ import urllib, random, webbrowser, re
 
 ROOT = "https://chicago.legistar.com/"
 
+#POLITICIAN CLASS
+
+# class Politician(object):
+
+#     def __init__(self, name, ward, phone, fax, email, website_url, office_address, office_city, office_state, city_hall_phone, city_hall_address, city_hall_city, city_hall_state, city_hall_zip):
+#         self.name = name
+#         self.date = date
+#         self.time = time
+#         self.location = location
+#         self.detail_link = detail_link
+#         self.department_members = department_members
+
+#     def __str__(self):
+#         return  "Event Name: "+self.name+"\nDate: "+self.date+"\nTime: "+self.time+"\nLocation: "+self.location+"\nLink to Details: "+self.detail_link
+
+
 #EVENT CLASS
 
 class Event(object):
@@ -72,12 +88,14 @@ def findEventDetailLink(event_html):
     clean_link = ROOT+dirty_link
     return clean_link
 
+
 #Start of functionality to create objects for politicians
 
 # def findEventDepartmentMembers(obj):
 #     web_page = urllib.urlopen(obj.detail_link)
 #     contents = web_page.read()
 #     web_page.close()
+
 #     return contents
 
 
@@ -89,6 +107,7 @@ def createEvents():
     for event_html in events_html:
         event = Event(name=findEventName(event_html), date=findEventDate(event_html), time=findEventTime(event_html), location=findEventLocation(event_html), detail_link=findEventDetailLink(event_html), department_members="a")
         print
+        # print findEventDepartmentMembers(event)
         print event
         event_objs.append(event)
 
